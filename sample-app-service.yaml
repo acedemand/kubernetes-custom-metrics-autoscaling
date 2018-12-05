@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-metrics-app
+  namespace: test
+  labels:
+    app: sample-metrics-app
+spec:
+  type: LoadBalancer
+  ports:
+  - name: web
+    port: 80
+    targetPort: 8080
+  selector:
+    app: sample-metrics-app
